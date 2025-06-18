@@ -15,15 +15,14 @@ name                     : &name "Noah Wightman"
 description              : &description "Ecologist"
 url                      : https://noahwightman.github.io # the base hostname & protocol for your site e.g. "https://[your GitHub username].github.io" or if you already have some other page hosted on Github then use "https://[your GitHub username].github.io/[Your Repo Name]"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "noahwightman/noahwightman.github.io
-"
+repository               : "noahwightman/noahwightman.github.io"
 
 # Site Author - The following control what appear as part of the author content on the side bar.
 #               If a field is blank the icon and link will not appear, otherwise it will be shown.
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : #"profile.png"
+  avatar           : "profile.png"
   name             : "Noah Wightman"
   pronouns         : "He/Him # example: "she/her"  
   bio              : "Ecologist"
