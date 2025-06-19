@@ -7,7 +7,10 @@ permalink: /research/
 <!-- Section 1: PhD Thesis Overview -->
 <section>
   <h2>PhD Thesis</h2>
-  {% include phd-thesis.md | markdownify %}
+  {% capture phd_thesis %}
+  {% include phd-thesis.md %}
+{% endcapture %}
+{{ phd_thesis | markdownify }}
 </section>
 
 <!-- Section 1: PhD Research Project Boxes -->
@@ -31,7 +34,10 @@ permalink: /research/
 <!-- Section 2: Other Research Overview -->
 <section style="margin-top: 2.5rem;">
   <h2>Other Research</h2>
-  {% include other-research.md | markdownify %}
+   {% capture other-research %}
+  {% include other-research.md %}
+{% endcapture %}
+{{ other-research | markdownify }}
 </section>
 
 <!-- Section 2: Other Research Project Boxes -->
