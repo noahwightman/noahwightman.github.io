@@ -1,7 +1,7 @@
 ---
 layout: archive
-title: "Publications"
-permalink: /publications/
+title: "Research"
+permalink: /research/
 author_profile: true
 ---
 
@@ -32,14 +32,34 @@ author_profile: true
   {% endfor %}
 {% endif %}
 
+<section>
+  <h2>PhD thesis</h2>
+  {% include phd-thesis.md %}
+</section>
+
 <div class="portfolio-grid">
-  <a href="https://link-to-project.com" class="portfolio-box">
-    <img src="path/to/image.jpg" alt="Project Title">
+  <a href="https://example.com/project1" class="portfolio-box">
+    <img src="https://via.placeholder.com/250x140" alt="Project 1">
     <div class="portfolio-text">
-      <h3>Project Title</h3>
-      <p>Short description of the project.</p>
+      {% include project1.md %}
     </div>
   </a>
-  <!-- Repeat <a> for more boxes -->
+  <a href="https://example.com/project2" class="portfolio-box">
+    <img src="https://via.placeholder.com/250x140" alt="Project 2">
+    <div class="portfolio-text">
+      {% include project2.md %}
+    </div>
+  </a>
+  <a href="https://example.com/project3" class="portfolio-box">
+    <img src="https://via.placeholder.com/250x140" alt="Project 3">
+    <div class="portfolio-text">
+      {% include project3.md %}
+    </div>
+  </a>
 </div>
+
+<section style="margin-top: 2.5rem;">
+  <h2>Other research</h2>
+  {% include other-research.md %}
+</section>
 
