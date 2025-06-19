@@ -24,7 +24,7 @@ author:
   # Biographic information
   avatar           : "profile.png"
   name             : "Noah Wightman"
-  pronouns         : "He/Him # example: "she/her"  
+  pronouns         : "He/Him" # example: "she/her"  
   bio              : "Ecologist"
   location         : "Montreal, Canada"
   employer         : "McGill University"
@@ -58,7 +58,7 @@ author:
   goodreads        : # Username
   google_plus      : # Username
   keybase          : # Username
-  instagram        : nudibranch.appreciationclub # Username
+  instagram        : "nudibranch.appreciationclub" # Username
   lastfm           : # Username
   linkedin         : # Username
   mastodon         : # URL
