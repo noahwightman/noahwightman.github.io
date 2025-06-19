@@ -1,65 +1,53 @@
 ---
-layout: archive
+layout: page
 title: "Research"
 permalink: /research/
-author_profile: true
 ---
 
-{% if site.author.googlescholar %}
-  <div class="wordwrap">You can also find my articles on <a href="{{site.author.googlescholar}}">my Google Scholar profile</a>.</div>
-{% endif %}
-
-{% include base_path %}
-
-<!-- New style rendering if publication categories are defined -->
-{% if site.publication_category %}
-  {% for category in site.publication_category  %}
-    {% assign title_shown = false %}
-    {% for post in site.publications reversed %}
-      {% if post.category != category[0] %}
-        {% continue %}
-      {% endif %}
-      {% unless title_shown %}
-        <h2>{{ category[1].title }}</h2><hr />
-        {% assign title_shown = true %}
-      {% endunless %}
-      {% include archive-single.html %}
-    {% endfor %}
-  {% endfor %}
-{% else %}
-  {% for post in site.publications reversed %}
-    {% include archive-single.html %}
-  {% endfor %}
-{% endif %}
-
+<!-- Section 1: PhD Thesis Overview -->
 <section>
-  <h2>PhD thesis</h2>
+  <h2>PhD Thesis</h2>
   {% include phd-thesis.md %}
 </section>
 
+<!-- Section 1: PhD Research Project Boxes -->
 <div class="portfolio-grid">
-  <a href="https://example.com/project1" class="portfolio-box">
-    <img src="https://via.placeholder.com/250x140" alt="Project 1">
-    <div class="portfolio-text">
-      {% include project1.md %}
-    </div>
-  </a>
-  <a href="https://example.com/project2" class="portfolio-box">
-    <img src="https://via.placeholder.com/250x140" alt="Project 2">
-    <div class="portfolio-text">
-      {% include project2.md %}
-    </div>
-  </a>
-  <a href="https://example.com/project3" class="portfolio-box">
-    <img src="https://via.placeholder.com/250x140" alt="Project 3">
-    <div class="portfolio-text">
-      {% include project3.md %}
-    </div>
-  </a>
+  {% assign phd_projects = site.publications | where:"category","PhD" | sort:"year" | reverse %}
+  {% for pub in phd_projects %}
+    <a href="{{ pub.link }}" class="portfolio-box" target="_blank">
+      {% if pub.image %}
+        <img src="{{ pub.image }}" alt="{{ pub.title }}">
+      {% endif %}
+      <div class="portfolio-text">
+        <h3>{{ pub.title }}</h3>
+        {% if pub.summary %}
+          <p>{{ pub.summary }}</p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
 </div>
 
+<!-- Section 2: Other Research Overview -->
 <section style="margin-top: 2.5rem;">
-  <h2>Other research</h2>
+  <h2>Other Research</h2>
   {% include other-research.md %}
 </section>
 
+<!-- Section 2: Other Research Project Boxes -->
+<div class="portfolio-grid">
+  {% assign other_projects = site.publications | where:"category","other research" | sort:"year" | reverse %}
+  {% for pub in other_projects %}
+    <a href="{{ pub.link }}" class="portfolio-box" target="_blank">
+      {% if pub.image %}
+        <img src="{{ pub.image }}" alt="{{ pub.title }}">
+      {% endif %}
+      <div class="portfolio-text">
+        <h3>{{ pub.title }}</h3>
+        {% if pub.summary %}
+          <p>{{ pub.summary }}</p>
+        {% endif %}
+      </div>
+    </a>
+  {% endfor %}
+</div>
