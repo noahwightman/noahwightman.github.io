@@ -96,3 +96,17 @@ body {
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+.hero-bg {
+  background-image: url('/assets/img/your-background.jpg');
+  background-size: cover;
+  background-position: center;
+  width: 100vw;
+  min-height: 400px; /* adjust height as needed */
+  position: relative;
+}
+nav {
+  position: relative;
+  z-index: 2;
+}
