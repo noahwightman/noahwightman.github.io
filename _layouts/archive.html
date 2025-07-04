@@ -13,7 +13,19 @@ layout: default
 {% endif %}
 
 <div id="main" role="main">
-  {% include sidebar.html %}
+  {% comment %} {% include sidebar.html %} {% endcomment %}
+
+  {% if page.header.overlay_color or page.header.overlay_image %}
+    <div class="page__hero" style="background-color: {{ page.header.overlay_color | default: site.header.overlay_color }}; background-image: url('{{ page.header.overlay_image | default: site.header.overlay_image }}');">
+      <h1 class="page__title">{{ page.title }}</h1>
+    </div>
+  {% endif %}
+
+  {% if page.url != "/" and site.breadcrumbs %}
+    {% unless paginator %}
+      {% include breadcrumbs.html %}
+    {% endunless %}
+  {% endif %}
 
   <div class="archive">
     {% unless page.header.overlay_color or page.header.overlay_image %}

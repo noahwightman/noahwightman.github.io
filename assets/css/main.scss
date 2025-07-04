@@ -7,13 +7,50 @@
  * Note that the files are processed in the order they are imported, so they are partly
    sorted by the dependencies. Also, the first two lines of the file are required by Jekyll.
  */
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+
+#main {
+  
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.hero-bg {
+  background-image: url('/assets/img/natureimage.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  min-height: 200px; /* or whatever height you want */
+  position: relative;
+  margin: 0;
+  padding: 0;
+  margin-top: -64px;   // adjust to your .masthead height
+  padding-top: 64px;   // same as above
+  z-index: 1;
+}
+nav {
+  position: relative;
+  z-index: 2;
+  background: transparent; // Remove background color
+  backdrop-filter: none;        // optional: adds a blur effect
+  //box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+ // padding: 1rem 2rem;
+  //border-radius: 0 0 12px 12px;
+}
 
 @import
     "vendor/breakpoint/breakpoint",
 
     "themes",
     "theme/default",
-    "theme/dark",
+    //"theme/dark",
 
     "include/mixins",
     "vendor/susy/susy",
@@ -84,15 +121,97 @@
   box-shadow: 0 4px 16px rgba(0,0,0,0.13);
 }
 
-
-body {
-  margin: 200px;
+.home-split {
+  display: flex;
+  flex-direction: row;
+  min-height: 60vh; // adjust as needed
+  gap: 2rem;
 }
 
+.home-left {
+  flex: 0 0 50%;
+  max-width: 50%;
+  padding-left: 350px;
+}
+.home-right {
+  flex: 0 0 50%;
+  max-width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px; // adjust to match or exceed your hero image height
+  padding-top: 1em;  // space from the top (adjust as needed)
+}
 
-#main {
-  background-image: url('/assets/img/natureimage.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+@media (max-width: 900px) {
+  .home-split {
+    flex-direction: column;
+  }
+  .home-left, .home-right {
+    padding: 1rem;
+  }
+}
+
+.circle-widget {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  width: 160px;
+}
+
+.circle-widget img {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border: 2px solid #77b300;
+  background: #fff;
+  transition: box-shadow 0.2s, border-color 0.2s;
+}
+
+.circle-widget:hover img {
+  box-shadow: 0 4px 16px rgba(119,179,0,0.25);
+  border-color: #4c6800;
+}
+
+.circle-widget span {
+  margin-top: 0.5em;
+  font-size: 0.95em;
+  color: #333;
+  text-align: center;
+  word-break: break-word;
+}
+
+.circle-widget-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); // 3 columns
+  grid-template-rows: repeat(2, 1fr);    // 2 rows
+  gap: 2em;
+  justify-items: center;
+  align-items: center;
+  height: 100%;         // fill the right side vertically
+  padding: 2em 1em;     // space inside the grid
+  background: transparent;
+}
+
+.inat-map-circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  border: 2px solid #77b300;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inat-map-circle iframe {
+  width: 120px;   // slightly larger to fill the circle
+  height: 120px;
+  border: none;
+  transform: scale(0.85); // scale down to fit inside the circle
+  pointer-events: none;   // makes the map non-interactive (remove if you want it interactive)
 }

@@ -9,6 +9,8 @@
 .breadcrumbs {
   @include container;
   @include clearfix;
+  background: transparent; // Remove background color
+  backdrop-filter: none;
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 2em;
@@ -175,17 +177,17 @@
 .greedy-nav {
   position: relative;
   min-width: 250px;
-  background: var(--global-bg-color);
+  background: transparent;
 
   a {
     display: block;
     margin: 0 1rem;
     padding: 0.5rem 0;
-    color: var(--global-masthead-link-color);
+    color: #4c6800;
     text-decoration: none;
 
     &:hover {
-      color: var(--global-masthead-link-color-hover);
+      color: #3f8200 ;
     }
   }
 
@@ -196,7 +198,7 @@
     padding: 0 0.5rem;
     border: 0;
     outline: none;
-    background-color: var(--global-base-color);
+    background: transparent;
     color: #fff;
     cursor: pointer;
     z-index: 100;

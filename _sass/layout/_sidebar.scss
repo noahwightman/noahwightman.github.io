@@ -9,6 +9,10 @@
 .sidebar {
   -webkit-transform: translate3d(0, 0 , 0);
           transform: translate3d(0, 0 , 0);
+  top: 100px;
+  left: 100px;
+  z-index: 30;
+  position: fixed;
 
   @include clearfix();
   margin-bottom: 1em;
@@ -16,12 +20,13 @@
   @media (orientation: portrait) {
     margin-top: 1em;
   }
-
+ 
   @media screen and (min-width: $sidebar-screen-min-width) {
     height: 100vh;
     overflow-y: auto;               // Add scrollbar if the sidebar is too long
     position: fixed;
     padding-top: $masthead-height;
+    
   }
 
   @include breakpoint($large) {
@@ -62,13 +67,13 @@
 
 .sidebar__right {
   margin-bottom: 1em;
-
+  position: fixed;
   @include breakpoint($large) {
-    position: relative;
+    position: fixed;
     float: right;
     width: $right-sidebar-width-narrow;
     margin-left: span(0.5 of 12);
-    z-index: 10;
+    z-index: 30;
   }
 
   @include breakpoint($x-large) {
@@ -84,6 +89,8 @@
   display: table-cell;
   vertical-align: top;
   width: 36px;
+  z-index: 30;
+
   // set width only, for non-square avatars
   // height: 36px;
 
@@ -96,10 +103,12 @@
   img {
     max-width: 175px;
     border-radius: 50%;
+    background: #4c6800;          
 
-    @include breakpoint($large) {
+
+  @include breakpoint($large) {
       padding: 5px;
-      border: 1px solid var(--global-border-color);
+      
     }
   }
 }

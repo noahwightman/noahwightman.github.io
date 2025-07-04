@@ -1,0 +1,57 @@
+---
+layout: default
+title: "Home"
+permalink: /
+---
+
+<div class="home-split">
+  <div class="home-left">
+    {% capture about_content %}
+      {% include about.md %}
+    {% endcapture %}
+    {{ about_content | markdownify }}
+  </div>
+  <div class="home-right">
+        <div class="circle-widget-grid">
+           <a href="https://www.inaturalist.org/people/noahwightman" target="_blank" class="circle-widget">
+                <img id="inat-latest-img" src="https://static.inaturalist.org/sites/default/files/favicon.ico" alt="Latest iNat Observation" />
+                <span>iNaturalist</span>
+            </a>
+
+            <a href="/research/" class="circle-widget">
+            <img src="/assets/img/research-icon.png" alt="Research" />
+            <span>Research</span>
+            </a>
+
+            <a href="/field-gallery/" class="circle-widget">
+            <img src="/assets/img/field-work-icon.png" alt="Teaching" />
+            <span>Field Gallery</span>
+            </a>
+
+            <a href="/micro-creatures/" class="circle-widget">
+            <img src="/assets/img/field-work-icon.png" alt="Teaching" />
+            <span>Micro-creatures</span>
+            </a>
+
+            <a href="/diving/" class="circle-widget">
+            <img src="/assets/img/field-work-icon.png" alt="Teaching" />
+            <span>Field Gallery</span>
+            </a>
+
+        </div>
+    </div>
+</div>
+
+<script>
+fetch('https://api.inaturalist.org/v1/observations?user_id=noahwightman&order_by=observed_on&order=desc&per_page=1')
+  .then(response => response.json())
+  .then(data => {
+    if (data.results && data.results.length > 0) {
+      const obs = data.results[0];
+      if (obs.photos && obs.photos.length > 0) {
+        // Use the medium-sized photo
+        document.getElementById('inat-latest-img').src = obs.photos[0].url.replace('square', 'medium');
+      }
+    }
+  });
+</script>

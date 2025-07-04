@@ -5,16 +5,30 @@ layout: compress
 {% include base_path %}
 
 <!doctype html>
-<html lang="{{ site.locale | slice: 0,2 }}" class="no-js"{% if site.site_theme == "dark" %} data-theme="dark"{% endif %}>
+<html lang="{{ site.locale | slice: 0,2 }}" class="no-js">
+
+
   <head>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
 
   <body>
+    
+    {% if page.url == "/" %}
+      {% include sidebar.html %}
+    {% endif %}
+    
+    <div class="hero-bg">
+      {% include masthead.html %}
+      
+      <!-- This will be your background image section, possibly empty if you just want the background behind nav -->
+    </div>
+
+    
 
     {% include browser-upgrade.html %}
-    {% include masthead.html %}
+    
 
     {{ content }}
 
