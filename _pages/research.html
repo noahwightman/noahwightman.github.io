@@ -15,7 +15,7 @@ permalink: /research/
 
 <!-- Section 1: PhD Research Project Boxes -->
 <div class="portfolio-grid">
-  {% assign phd_projects = site.publications | where:"category","PhD" | sort:"year" | reverse %}
+  {% assign phd_projects = site.publications | where:"category","PhD" | sort:"year" %}
   {% for pub in phd_projects %}
     <a href="{{ pub.link }}" class="portfolio-box" target="_blank">
       {% if pub.image %}

@@ -11,8 +11,8 @@ main:
   - title: "Research"
     url: /research/
 
-  - title: "Talks"
-    url: /talks/   
+  #- title: "Talks"
+  #  url: /talks/   
 
   - title: "Teaching & Leadership"
     url: /leadership/    
@@ -20,11 +20,11 @@ main:
   - title: "Just for Fun"
     url: /justforfun/
         
-  - title: "CV"
-    url: /cv/
+  #- title: "CV"
+  #  url: /cv/
     
   # - title: "CV"
   #   url: /cv-json/
     
-  - title: "Guide"
-    url: /markdown/
+  #- title: "Guide"
+  #  url: /markdown/

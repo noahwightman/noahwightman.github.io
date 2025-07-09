@@ -1,10 +1,9 @@
 ---
-title: "Interpretable Genomics"
+title: "Chapter 1"
 image: "/assets/img/natureimage.png"
-link: "https://noahwightman.github.io/research/interpretable-genomics"
-summary: "Using advanced ML for interpretable gene expression analysis in rare diseases."
-year: 2024
+link: "https://noahwightman.github.io/research/ch1"
+summary: "Quantifying uncertainty in bias corrected presence-only SDMs"
+year: 2023
 category: "PhD"
 ---
 
-This project developed new machine learning models to make gene expression analysis more interpretable for clinicians.
